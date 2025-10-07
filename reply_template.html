@@ -1,0 +1,23 @@
+<div class="reply">
+  <p><b>Re: {{title}}</b></p>
+  <p><b>{{author}}</b> - {{created_at}}</p>
+  <br />
+  <p>{{comment}}</p>
+  <br />
+  <input type="button" value="Reply" class="nested_showReplyBtn" />
+
+  <div class="nested_replyBox">
+    <form method="POST" action="reply.php">
+      <input type="hidden" name="post_id" value="{{post_id}}" />
+      <input type="hidden" name="parent_id" value="{{id}}" />
+      <textarea name="reply" rows="4" cols="50" required></textarea><br>
+      <input type="submit" value="Post reply" class="nested_postBtn"/>
+      <input type="button" value="Cancel" class="nested_cancelBtn" />
+    </form>
+  </div>
+</div>
+
+<div class="reply-children">
+  {{replies}}
+</div>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussion Forum</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>Discussion Forum</h1>
+    <button id="showFormBtn">Add discussion topic</button>
+    <div class="hidden" id="discussionForm">
+      <form method="post" action="index.php">
+        <label for="subject">Subject</label>
+        <p><input type="text" id="subject" name="subject" /></p>
+        <label for="subject">Name</label>
+        <p><input type="text" name="author" placeholder="Your name (optional)">
+        </p>
+        <label for="text_area">Message</label>
+        <p>
+          <textarea
+            name="text_area"
+            rows="20"
+            cols="50"
+            id="message"
+            placeholder="Enter your post..."
+          ></textarea>
+        </p>
+        <input type="submit" value="Post" name="submit_button" id="postBtn" />
+        <input
+          type="button"
+          value="Cancel"
+          name="cancel_button"
+          id="cancelBtn"
+        />
+      </form>
+    </div>
+    <div id="discussionList">
+      <table>
+        <thead>
+          <tr>
+            {{discussion_head}}
+          </tr>
+        </thead>
+        <tbody>
+          {{discussion_rows}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

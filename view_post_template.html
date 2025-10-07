@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="view_post.js"></script>
+  </head>
+  <body>
+    <a href="index.php" id="back_forum">Back to Forum</a>
+    <h2>{{title}}</h2>
+
+    <div id="showPost">
+      <p><b>{{title}}</b></p>
+      <p>by {{author}} - {{created_at}}</p>
+      <br />
+      <p>{{content}}</p>
+      <input
+        type="button"
+        value="Reply"
+        name="reply_button"
+        class="showReplyBtn"
+      />
+
+      <div class="replyBox">
+        <form method="POST" action="reply.php">
+          <input type="hidden" name="post_id" value="{{post_id}}" />
+          <textarea
+            name="reply"
+            rows="10"
+            cols="50"
+            placeholder="write your reply..."
+            required
+          ></textarea
+          ><br /><br />
+          <input
+            type="submit"
+            value="Post to forum"
+            name="submit_button"
+            class="postBtn"
+          />
+          <input
+            type="button"
+            value="Cancel"
+            name="cancel_button"
+            class="cancelBtn"
+          />
+        </form>
+      </div>
+    </div>
+
+    {{replies}}
+  </body>
+</html>
