@@ -21,6 +21,5 @@ The project demonstrates **PHP, MySQL, HTML, CSS, and JavaScript** with a focus 
 - **HTML5 & CSS3**
 - **JavaScript (vanilla DOM API)**
 
----
 
 
